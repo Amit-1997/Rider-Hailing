@@ -30,10 +30,14 @@ rides_agg= rides.groupby("ride_id").agg(
     max(F.col("user_id")).alias("user_id"),
     max(F.col("driver_id")).alias("driver_id"),
     max(F.col("fare")).alias("fare")
+
 )
 
 # check if end_time is null means the ride is incomplete
 rides_agg = rides_agg.withColumn("status", when (F.col("end_time").isNull(), "INCOMPLETE") .otherwise("COMPLETED"))
+
+rides_agg.write.format("parquet").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_rides")
+
 
 
 
