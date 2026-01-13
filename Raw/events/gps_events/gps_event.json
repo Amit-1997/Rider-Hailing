@@ -1,0 +1,8 @@
+{
+  "gps_event_id" : "gps_001",
+  "ride_id" : "ride_789",
+  "driver_id": "driver_202",
+  "latitude" : 12.9751,
+  "longitude" : 77.6012,
+  "event_time" : "2026-01-12T08:55:30Z"
+}
