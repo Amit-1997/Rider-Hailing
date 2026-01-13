@@ -1,0 +1,11 @@
+{
+  "event_id" : "evt_12345",
+  "event_type" : "RIDE_REQUESTEED",
+  "ride_id": "ride_789",
+  "user_id" : "user_101",
+  "timestamp" : "2026-01-12T08:45:12Z",
+  "pickup_lat" : 12.9716,
+  "pickup_lng" : 77.5946,
+  "source" : "mobile_app"
+}
+
