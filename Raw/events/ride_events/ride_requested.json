@@ -1,11 +1,58 @@
-{
+[{
   "event_id" : "evt_12345",
-  "event_type" : "RIDE_REQUESTEED",
+  "event_type" : "REQUESTED",
   "ride_id": "ride_789",
   "user_id" : "user_101",
   "timestamp" : "2026-01-12T08:45:12Z",
-  "pickup_lat" : 12.9716,
-  "pickup_lng" : 77.5946,
+  "source" : "mobile_app"
+},
+
+  {
+  "event_id" : "evt_12345",
+  "event_type" : "REQUESTED",
+  "ride_id": "ride_789",
+  "user_id" : "user_101",
+  "timestamp" : "2026-01-12T08:46:12Z",
+  "source" : "mobile_app"
+},
+{
+  "event_id" : "evt_09101",
+  "event_type" : "Accepted",
+  "ride_id": "ride_789",
+  "user_id" : "user_101",
+  "driver_id" : "driver_202",
+  "timestamp" : "2026-01-12T08:47:12Z",
+  "source" : "mobile_app"
+},
+{
+  "event_id" : "evt_09815",
+  "event_type" : "Completed",
+  "ride_id": "ride_789",
+  "user_id" : "user_101",
+  "driver_id" : "driver_202",
+  "fare" : 320.50,
+  "timestamp" : "2026-01-12T09:15:12Z",
+  "source" : "mobile_app"
+},
+
+
+
+  {
+  "event_id" : "evt_00000",
+  "event_type" : "REQUESTED",
+  "ride_id": "ride_900",
+  "user_id" : "user_100",
+  "timestamp" : "2026-01-12T07:46:12Z",
+  "source" : "mobile_app"
+},
+{
+  "event_id" : "evt_00010",
+  "event_type" : "Accepted",
+  "ride_id": "ride_900",
+  "user_id" : "user_100",
+  "driver_id" : "driver_200",
+  "timestamp" : "2026-01-12T07:48:12Z",
   "source" : "mobile_app"
 }
+]
 
