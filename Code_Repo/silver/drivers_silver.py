@@ -21,4 +21,4 @@ clean_drivers = (
 
 )
 clean_drivers.show()
-clean_drivers.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_drivers")
+clean_drivers.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/silver/clean_drivers")

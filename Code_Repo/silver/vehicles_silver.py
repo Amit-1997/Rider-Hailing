@@ -20,5 +20,5 @@ clean_vehicle = (
     .select("vehicle_id", "vehicle_type", "plate_number", "capacity")
 )
 clean_vehicle.show()
-clean_vehicle.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_vehicle")
+clean_vehicle.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_vehicles")
 

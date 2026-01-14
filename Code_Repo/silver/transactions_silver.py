@@ -24,4 +24,4 @@ clean_payment = (
 
 )
 clean_payment.show()
-clean_payment.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_payment")
+clean_payment.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_payments")
