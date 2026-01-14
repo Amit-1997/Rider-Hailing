@@ -1,8 +1,8 @@
 {
-  "payment_id" : "veh_303",
-  "ride_id" : "SEDAN",
+  "payment_id" : "pay_555",
+  "ride_id" : "ride_789",
   "amount": 320.50,
   "payment_mode" : "UPI",
   "payment_status" : "SUCCESS",
-  "paid_at" : "2026-01-12T09:12:00Z"
+  "paid_at" : "2026-01-12T09:17:00Z"
 }

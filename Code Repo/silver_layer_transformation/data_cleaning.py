@@ -77,3 +77,20 @@ clean_vehicle = (
 )
 clean_vehicle.show()
 clean_vehicle.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_vehicle")
+
+
+
+#clean payment
+payment_window = Window.partitionBy("ride_id").orderBy(F.col("paid_at").desc())
+
+clean_payment = (
+    raw_transactions
+    .withColumn("paid_at", F.to_timestamp("paid_at"))
+    .withColumn("rn", F.row_number().over(payment_window))
+    .filter(F.col("rn") == 1)
+    .drop("rn")
+    .select("payment_id", "ride_id", "amount", "payment_mode" , "payment_status", "paid_at")
+
+)
+clean_payment.show()
+clean_payment.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_payment")
