@@ -11,8 +11,8 @@ spark = SparkSession.builder.appName("data_ingestion").master("local[*]").getOrC
 #reading all the raw data
 raw_ride_requested= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/events/ride_events/ride.json").alias("rr")
 raw_user= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/db/users/user.json")
-raw_driver= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/db/users/driver.json")
-raw_vehicles= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/db/users/vehicles.json")
+raw_driver= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/db/drivers/driver.json")
+raw_vehicles= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/db/vehicles/vehicles.json")
 raw_transactions= spark.read.format("json").option("multiline", True).load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/payments/transactions/transaction.json")
 
 
