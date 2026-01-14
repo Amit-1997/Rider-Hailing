@@ -12,4 +12,4 @@ def get_path(name):
     elif name == "raw_transactions":
         return "/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Raw/payments/transactions/transaction.json"
     else:
-        return "FIle Not Found, Please provode the correct name"
+        return "FIle Not Found, Please provide the correct name"
