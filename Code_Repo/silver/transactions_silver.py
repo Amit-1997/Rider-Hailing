@@ -1,15 +1,15 @@
 
 from Code_Repo.common.spark_session import get_spark
-from Code_Repo.configs.paths import get_path
+from Code_Repo.configs.paths import RAW_PATH,SILVER_PATH
 from pyspark.sql import functions as F
 from pyspark.sql.functions import *
 from pyspark.sql import *
 
 try:
     job_name = input("Pipeline name for Payments: ")
-    path = get_path(job_name)
+
     spark= get_spark("Silver_Payment_Transform")
-    raw_transactions= spark.read.format("json").option("multiline", True).load(path)
+    raw_transactions= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/payments/transactions/transaction.json")
 
     #clean payment
     payment_window = Window.partitionBy("ride_id").orderBy(F.col("paid_at").desc())
@@ -24,6 +24,6 @@ try:
 
     )
     clean_payment.show()
-    clean_payment.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_payments")
+    clean_payment.write.format("parquet").mode("overwrite").save(f"{SILVER_PATH}/clean_payments")
 except:
     print("Pipeline name is incorrect, Please check and provide the correct pipeline name.")

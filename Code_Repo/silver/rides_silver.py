@@ -1,5 +1,5 @@
 from Code_Repo.common.spark_session import get_spark
-from Code_Repo.configs.paths import get_path
+from Code_Repo.configs.paths import RAW_PATH,SILVER_PATH
 from pyspark.sql import functions as F
 from pyspark.sql.functions import *
 from pyspark.sql import *
@@ -8,9 +8,8 @@ from pyspark.sql import *
 
 try:
     job_name = input("Pipeline name for Rides: ")
-    path = get_path(job_name)
     spark= get_spark("Silver_Rides_Transform")
-    raw_ride_requested= spark.read.format("json").option("multiline", True).load(path).alias("rr")
+    raw_ride_requested= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/events/ride_events/ride.json").alias("rr")
     #cleaning related to the rides data
 
 
@@ -35,7 +34,7 @@ try:
     # check if end_time is null means the ride is incomplete
     clean_rides = clean_rides.withColumn("status", when (F.col("end_time").isNull(), "INCOMPLETE") .otherwise("COMPLETED"))
     clean_rides.show()
-    clean_rides.write.format("parquet").mode("overwrite").save("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_rides")
+    clean_rides.write.format("parquet").mode("overwrite").save(f"{SILVER_PATH}/clean_rides")
 
 except:
     print("Pipeline name is incorrect, Please check and provide the correct pipeline name.")
