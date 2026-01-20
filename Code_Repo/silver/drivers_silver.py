@@ -7,7 +7,7 @@ from pyspark.sql import *
 
 def main():
     try:
-        job_name = input("Pipeline name for Drivers: ")
+        # job_name = input("Pipeline name for Drivers: ")
 
         spark= get_spark("Silver_Driver_Transform")
         raw_drivers= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/db/drivers/driver.json")

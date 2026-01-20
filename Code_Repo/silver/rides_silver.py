@@ -7,7 +7,7 @@ from pyspark.sql import *
 
 def main():
     try:
-        job_name = input("Pipeline name for Rides: ")
+        # job_name = input("Pipeline name for Rides: ")
         spark= get_spark("Silver_Rides_Transform")
         raw_ride_requested= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/events/ride_events/ride.json").alias("rr")
         #cleaning related to the rides data

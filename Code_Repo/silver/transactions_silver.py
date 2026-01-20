@@ -7,7 +7,7 @@ from pyspark.sql import *
 
 def main():
     try:
-        job_name = input("Pipeline name for Payments: ")
+        # job_name = input("Pipeline name for Payments: ")
 
         spark= get_spark("Silver_Payment_Transform")
         raw_transactions= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/payments/transactions/transaction.json")

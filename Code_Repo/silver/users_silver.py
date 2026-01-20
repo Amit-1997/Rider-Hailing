@@ -8,7 +8,7 @@ from pyspark.sql import *
 
 def main():
     try:
-        job_name = input("Pipeline name for Users: ")
+        # job_name = input("Pipeline name for Users: ")
         spark= get_spark("Silver_Users_Transform")
         raw_users= spark.read.format("json").option("multiline", True).load(f"{RAW_PATH}/db/users/user.json")
 
