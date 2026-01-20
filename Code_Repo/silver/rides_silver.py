@@ -23,9 +23,10 @@ try:
     rides_window = Window.partitionBy("event_id").orderBy("timestamp")
     rides= rides.withColumn("rnk", F.row_number().over(rides_window)).filter(F.col("rnk") == 1).drop("rnk")
     clean_rides= rides.groupby("ride_id").agg(
-        min(when(F.col("event_type")=="REQUESTED" , F.col("timestamp"))).alias("start_time"),
-        max(when(F.col("event_type")=="COMPLETED", F.col("timestamp"))).alias("end_time"),
+        min(when(F.col("event_type")=="REQUESTED" , F.col("timestamp"))).alias("start_time").cast("timestamp"),
+        max(when(F.col("event_type")=="COMPLETED", F.col("timestamp"))).alias("end_time").cast("timestamp"),
         max(F.col("user_id")).alias("user_id"),
+        max(F.col("vehicle_id")).alias("vehicle_id"),
         max(F.col("driver_id")).alias("driver_id"),
         max(F.col("fare")).alias("fare")
 

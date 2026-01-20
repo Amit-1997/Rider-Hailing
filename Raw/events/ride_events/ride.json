@@ -3,6 +3,7 @@
   "event_type" : "REQUESTED",
   "ride_id": "ride_789",
   "user_id" : "user_101",
+  "vehicle_id" : "veh_303",
   "timestamp" : "2026-01-12T08:45:12Z",
   "source" : "mobile_app"
 },
@@ -12,6 +13,7 @@
   "event_type" : "REQUESTED",
   "ride_id": "ride_789",
   "user_id" : "user_101",
+  "vehicle_id" : "veh_303",
   "timestamp" : "2026-01-12T08:46:12Z",
   "source" : "mobile_app"
 },
@@ -20,6 +22,7 @@
   "event_type" : "Accepted",
   "ride_id": "ride_789",
   "user_id" : "user_101",
+  "vehicle_id" : "veh_303",
   "driver_id" : "driver_202",
   "timestamp" : "2026-01-12T08:47:12Z",
   "source" : "mobile_app"
@@ -29,19 +32,18 @@
   "event_type" : "Completed",
   "ride_id": "ride_789",
   "user_id" : "user_101",
+  "vehicle_id" : "veh_303",
   "driver_id" : "driver_202",
   "fare" : 320.50,
   "timestamp" : "2026-01-12T09:15:12Z",
   "source" : "mobile_app"
 },
-
-
-
   {
   "event_id" : "evt_00000",
   "event_type" : "REQUESTED",
   "ride_id": "ride_900",
-  "user_id" : "user_100",
+  "user_id" : "user_102",
+    "vehicle_id" : "veh_303",
   "timestamp" : "2026-01-12T07:46:12Z",
   "source" : "mobile_app"
 },
@@ -49,9 +51,21 @@
   "event_id" : "evt_00010",
   "event_type" : "Accepted",
   "ride_id": "ride_900",
-  "user_id" : "user_100",
+  "user_id" : "user_102",
+  "vehicle_id" : "veh_303",
   "driver_id" : "driver_200",
   "timestamp" : "2026-01-12T07:48:12Z",
+  "source" : "mobile_app"
+},
+  {
+  "event_id" : "evt_00110",
+  "event_type" : "Completed",
+  "ride_id": "ride_900",
+  "user_id" : "user_102",
+  "vehicle_id" : "veh_303",
+  "driver_id" : "driver_200",
+    "fare" : 350.50,
+  "timestamp" : "2026-01-12T08:01:12Z",
   "source" : "mobile_app"
 }
 ]

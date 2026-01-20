@@ -7,5 +7,9 @@ from sqlalchemy.sql.sqltypes import NULLTYPE
 spark = SparkSession.builder.appName("data_ingestion").master("local[*]").getOrCreate()
 
 spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_rides").show()
-#spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_user").show()
-#spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_driver").show()
+#spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_users").show()
+#spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Silver/clean_drivers").show()
+
+#spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Gold/dim_users").show()
+
+# spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Gold/dim_users").show()
