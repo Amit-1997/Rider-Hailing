@@ -13,3 +13,5 @@ spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Ha
 #spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Gold/dim_users").show()
 
 # spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Gold/dim_users").show()
+
+spark.read.format("parquet").load("/Users/amitchaurasia/PycharmProjects/Rider-Hailing/Gold/fact_payments/").show()
